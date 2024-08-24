@@ -1,0 +1,25 @@
+.btn {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  background-color: inherit;
+}
+.btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.btn p {
+  display: none;
+}
+.btn:hover::after {
+    content: attr(data-planet-name); 
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
+  }

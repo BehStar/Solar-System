@@ -1,0 +1,162 @@
+.wrapper {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  perspective: 800px;
+  background: black url("/public/images/stars.png") repeat top center;
+}
+
+.solar {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.sun {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgb(255, 128, 0),
+    rgb(255, 153, 0)
+  );
+  box-shadow: 0 0 20px 5px rgb(239, 118, 4), 0 0 40px 10px orange,
+    0 0 60px 15px rgba(255, 165, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  animation: pulse 2s ease-in-out infinite;
+  background-image: url("/public/images/sun.png");
+  background-position: center center;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px 5px #fdba74, 0 0 40px 10px orange,
+      0 0 60px 15px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px 7px #fb923c, 0 0 45px 12px orange,
+      0 0 65px 17px rgba(255, 165, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px #f97316, 0 0 40px 10px orange,
+      0 0 60px 15px rgba(255, 165, 0, 0.5);
+  }
+}
+
+.test {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(60deg);
+}
+.mercury,
+.venus,
+.earth,
+.mars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dotted darkgray;
+}
+
+.mercuryPlanet,
+.venusPlanet,
+.earthPlanet,
+.marsPlanet {
+  border-radius: 50%;
+  background-color: brown;
+  transition: 0.3s;
+  transform: translate(100%, 200%);
+  transform-origin: 0 center;
+  background-size: cover;
+  background-position: center center;
+  background-size: contain;
+}
+
+.mercury {
+  width: 9rem;
+  height: 9rem;
+  animation: rotate 4s linear infinite;
+}
+
+.mercuryPlanet {
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translate3d(0%, 500%, 200px);
+  background-image: url("/public/images/mercury.png");
+}
+
+.venus {
+  width: 12rem;
+  height: 12rem;
+  animation: rotate 8s linear infinite;
+}
+
+.venusPlanet {
+  width: 1.75rem;
+  height: 1.75rem;
+  transform: translate3d(0%, 100%, 200px);
+  background: url("/public/images/venus.png");
+  background-size: contain;
+}
+
+.earth {
+  width: 17rem;
+  height: 17rem;
+  animation: rotate 9s linear infinite;
+}
+.earthPlanet {
+  width: 2rem;
+  height: 2rem;
+  transform: translate3d(0%, 175%, 200px);
+  background: url("/public/images/earth2.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.mars {
+  width: 26rem;
+  height: 26rem;
+  animation: rotate 16s linear infinite;
+}
+
+.marsPlanet {
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: translate3d(0%, 650%, 200px);
+  background-image: url("/public/images/mars.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.list {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.selection {
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.8);
+}
